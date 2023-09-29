@@ -15,3 +15,13 @@ function stickyNav() {
 
 // Attach the function to the scroll event
 window.addEventListener('scroll', stickyNav);
+
+const parallaxImage = document.querySelector('.parallax-image');
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.pageYOffset;
+
+    // Adjust the parallax effect by changing the '0.5' value
+    parallaxImage.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+
